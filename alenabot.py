@@ -1,9 +1,9 @@
-import telebot
+import telebot, os
 from datetime import datetime
+from dotenv import load_dotenv 
 
-
-TOKEN = '7675150046:AAF3y-zPC5Z5YKfVdQwXyk8iCDsDO89Pb5M'
-bot = telebot.TeleBot(TOKEN)
+load_dotenv()
+bot = telebot.TeleBot(os.getenv('TOKEN'))
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
